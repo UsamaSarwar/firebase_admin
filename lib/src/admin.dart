@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:firebase_admin/src/utils/env.dart';
 import 'package:firebase_admin/src/utils/error.dart';
+import 'package:firebase_admin/src/utils/io.dart';
 
 import 'app.dart';
 import 'auth/credential.dart';
