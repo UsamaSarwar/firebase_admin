@@ -3,6 +3,15 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## Unreleased
+
+### Features
+
+- **FEAT**: Add Flutter Web platform support. The package now works on Flutter Web with conditional imports for platform-specific functionality.
+  - File-based credentials are not supported on web; use Map objects instead
+  - Login functionality is not available on web; use service account credentials
+  - See README for web-specific usage examples and security considerations
+
 ## 2025-09-05
 
 ### Changes

@@ -52,6 +52,16 @@ void main() async {
 }
 ```
 
+> **⚠️ Security Warning for Web Applications:**
+> 
+> Firebase Admin SDK provides unrestricted access to your Firebase resources. Service account credentials should **NEVER** be embedded directly in client-side web applications as they would be exposed to end users. 
+>
+> For web applications, you should:
+> - Use Firebase Client SDK instead of Admin SDK for user-facing operations
+> - Only use Admin SDK on a secure backend server
+> - If you must use Admin SDK features, proxy requests through your backend server
+> - Never commit service account credentials to version control
+
 ## Example using service account
 
 ```dart
