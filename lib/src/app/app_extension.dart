@@ -1,6 +1,5 @@
-import 'dart:io';
-
 import 'package:firebase_admin/src/auth/credential.dart';
+import 'package:firebase_admin/src/utils/io.dart';
 
 import '../../firebase_admin.dart';
 

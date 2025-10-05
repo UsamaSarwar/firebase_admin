@@ -1,8 +1,8 @@
 import 'dart:async';
-import 'dart:io';
 import 'dart:convert';
 import 'package:x509/x509.dart';
 import '../utils/error.dart';
+import '../utils/io.dart';
 import 'package:http/http.dart' as http;
 import 'package:jose/jose.dart';
 import '../credential.dart';

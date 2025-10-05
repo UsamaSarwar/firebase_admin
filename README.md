@@ -9,6 +9,49 @@ Currently, only supports admin methods for the following firebase services:
 * authentication
 * realtime database
 
+## Platform Support
+
+This package supports all Flutter and Dart platforms:
+- ✅ Flutter Mobile (iOS, Android)
+- ✅ Flutter Desktop (Windows, macOS, Linux)
+- ✅ Flutter Web
+- ✅ Dart Server (VM)
+
+### Flutter Web Limitations
+
+When using this package on Flutter Web, please note:
+
+* **File-based credentials are not supported** - You cannot use file paths to load service account credentials. Instead, provide credentials as a Map object.
+* **Login functionality is not available** - The `Credentials.login()` method is not supported on web. Use service account credentials or other authentication methods.
+* **Environment variables** - Access to environment variables may be limited depending on the web server configuration.
+
+**Example for Flutter Web:**
+
+```dart
+import 'package:firebase_admin/firebase_admin.dart';
+
+void main() async {
+  // Instead of using a file path, provide the service account as a Map
+  final serviceAccount = {
+    'type': 'service_account',
+    'project_id': 'your-project-id',
+    'private_key_id': 'your-private-key-id',
+    'private_key': 'your-private-key',
+    'client_email': 'your-client-email',
+    'client_id': 'your-client-id',
+  };
+  
+  var app = FirebaseAdmin.instance.initializeApp(AppOptions(
+    credential: ServiceAccountCredential(serviceAccount),
+    projectId: 'your-project-id',
+  ));
+
+  // Use Firebase Admin features as usual
+  var user = await app.auth().getUserByEmail('user@example.com');
+  print(user.toJson());
+}
+```
+
 ## Example using service account
 
 ```dart

@@ -1,8 +1,8 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:firebase_admin/src/utils/env.dart';
-import 'package:openid_client/openid_client_io.dart';
+import 'package:firebase_admin/src/utils/io.dart';
+import 'package:firebase_admin/src/utils/openid.dart';
 
 import 'auth/credential.dart';
 import 'utils/error.dart';
